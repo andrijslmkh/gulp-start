@@ -27,6 +27,7 @@ exports.images = images;
 exports.sprite = sprite;
 exports.fonts = fonts;
 exports.pages = pages;
+exports.building = building;
 exports.watching = watching;
 
 exports.imgsp = series(images, sprite);
