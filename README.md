@@ -1,8 +1,8 @@
 # gulp-start
 
 <pre>
-#Example based integration INCLUDE on HTML
-
+#Example based integration INCLUDE on HTML 
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">&lt;!--=include relative/path/to/file.html --&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
 </pre>
 
 <pre>
