@@ -12,6 +12,7 @@ Example based integration AVIF<br>
 </code>
 
 # gulp --tasks
+<pre>
 exports.styles = styles;<br>
 exports.scripts = scripts;<br>
 exports.images = images;<br>
@@ -23,3 +24,4 @@ exports.watching = watching;<br>
 exports.imgsp = series(images, sprite);<br>
 exports.build = series(building, cleanDist, building);<br>
 exports.watch = parallel(styles, scripts, pages, watching);<br>
+</pre>
