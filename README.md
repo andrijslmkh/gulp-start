@@ -1,9 +1,8 @@
 # gulp-start
 
-<pre>#Add images on html</pre>
-
-<pre>Example based integration AVIF</pre>
 <pre>
+#Add images on html
+Example based integration AVIF
 <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-kos">&lt;</span><span class="pl-ent">picture</span><span class="pl-kos">&gt;</span>
     <span class="pl-kos">&lt;</span><span class="pl-ent">source</span> <span class="pl-c1">type</span>="<span class="pl-s">image/avif</span>" <span class="pl-c1">srcset</span>="<span class="pl-s">./to/show.avif</span>" /&gt;
     <span class="pl-kos">&lt;</span><span class="pl-ent">source</span> <span class="pl-c1">type</span>="<span class="pl-s">image/webp</span>" <span class="pl-c1">srcset</span>="<span class="pl-s">./to/show.webp</span>" /&gt;
