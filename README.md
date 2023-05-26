@@ -1,5 +1,13 @@
 # gulp-start
 
+#Add images on html<br>
+<br>
+Example based integration AVIF<br>
+`<picture>
+    <source type="image/avif" srcset="./to/show.avif" />
+    <source type="image/webp" srcset="./to/show.webp" />
+    <img src="./to/show.png">
+</picture>`
 
 # gulp --tasks
 exports.styles = styles;<br>
