@@ -3,10 +3,10 @@
 #Add images on html<br>
 <br>
 Example based integration AVIF<br>
-`<picture>
-    <source type="image/avif" srcset="./to/show.avif" />
-    <source type="image/webp" srcset="./to/show.webp" />
-    <img src="./to/show.png">
+`<picture><br>
+    <source type="image/avif" srcset="./to/show.avif" /><br>
+    <source type="image/webp" srcset="./to/show.webp" /><br>
+    <img src="./to/show.png"><br>
 </picture>`
 
 # gulp --tasks
