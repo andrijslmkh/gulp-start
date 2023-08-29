@@ -5,5 +5,140 @@
 //@import "../../node_modules/slick-carousel/slick/slick";
 //@import "../../node_modules/slick-carousel/slick/slick-theme";
 
+$fontFamily: "";
+$fontSize: rem(16); /* Default */
+
+/*  Basic colors */
+$mainColor: #000;
+
+
+/*  Adaptive grid setup =================================================================================================================================================================================================================================================== */
+
+/*  Minimum page width */
+$minWidth: 320;
+/*  Width of the canvas (layout) */
+$maxWidth: 1920;
+/*  Width of bounding container (0 = no bounding) */
+$maxWidthContainer: 1170;
+/*  Total indentation of the container 
+  (30 = 15px left and right, 0 = no indentation) */
+$containerPadding: 30;
+
+/*  Trigger width of the first breakpoint */
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+/*  Breakpoints */
+$pc: em($containerWidth); /*  PCs, laptops, some tablets in horizontal position */
+$tablet: em(991.98); /*  Tablets, some phones in horizontal position */
+$mobile: em(767.98); /*  Phones L */
+$mobileSmall: em(479.98); /*  Phones S */
+
+
+/*  Adaptive type: 
+1 = responsiveness (container has no breakpoints),
+2 = at the breakpoint (the container changes its width at the breakpoint) */
+$responsiveType: 1;
+
+
+/* Reset to zero ===================================================================================================================================================================================================================================================
+*/
+
+
+/* BODY tag styles ===================================================================================================================================================================================================================================================
+*/
+
+html, body {
+  @apply h-full;
+  /* Scroll is locked */
+  .lock & {
+    @apply overflow-hidden touch-none overscroll-none;
+  }
+  /* The site is loaded */
+  .loaded & {}
+}
+
+/* The wrapper =================================================================================================================================================================================================================================================== */
+.wrapper {
+  @apply flex flex-col min-h-full overflow-hidden;
+  /* Press the footer */
+  >main {
+    @apply flex-auto;
+  }
+  /* Fix for sliders */
+  >* {
+    @apply min-w-0;
+  }
+}
+
+/* Confining container =================================================================================================================================================================================================================================================== */
+
+/* (i) Styles will apply to of all classes containing *__container 
+For example, header__container, main__container, etc. */
+
+@if ($responsiveType==1) {
+  /* Responsive */
+  [class*="__container"] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($containerWidth);
+      margin: 0 auto;
+    }
+    @if ($containerPadding>0) {
+      @if ($maxWidthContainer>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+      @else {
+        @include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
+        @include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
+      }
+    }
+  }
+}
+@else {
+  /* Break points */
+  [class*="__container"] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: rem($containerWidth);
+    }
+    @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+  }
+}
+
+/* Styles for responsive pictures (IBG) */
+[class*="-ibg"] {
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+[class*="-ibg_contain"] {
+  img {
+    object-fit: contain;
+  }
+}
+
 @import "reset";
 @import "style";
